@@ -1,0 +1,308 @@
+
+    :root {
+      --green: #2e7d32;
+      --green-light: #4caf50;
+      --yellow: #f9c416;
+      --yellow-dark: #e0a800;
+      --red: #d32f2f;
+      --blue: #1565c0;
+      --dark: #1a1a2e;
+      --gray-light: #f5f5f5;
+      --text: #333;
+    }
+    * { box-sizing: border-box; }
+    body { font-family: 'Open Sans', sans-serif; color: var(--text); background: #fff; }
+    h1,h2,h3,h4,h5,h6,.fw-bold { font-family: 'Nunito', sans-serif; }
+
+    /* ====== NAVBAR ====== */
+    .navbar-top {
+      background: #88E788;
+      border-bottom: 3px solid var(--green);
+      padding: 8px 0;
+      position: sticky; top: 0; z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .navbar-top .nav-link {
+      color: var(--dark) !important;
+      font-weight: 600;
+      font-size: 0.88rem;
+      padding: 6px 14px !important;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .navbar-top .nav-link:hover, .navbar-top .nav-link.active {
+      background: var(--green);
+      color: #fff !important;
+    }
+    .navbar-brand img { height: 38px; }
+    .flag-icon { width: 28px; border-radius: 2px; }
+
+    /* ====== HERO ====== */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('bg.jpeg') center/cover no-repeat;
+      min-height: 300px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .hero h1 {
+      color: #fff;
+      font-size: 2.4rem;
+      font-weight: 900;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      letter-spacing: 1px;
+    }
+    .hero-overlay-sign {
+      position: absolute; right: 60px; top: 50%;
+      transform: translateY(-50%);
+    }
+    .hero-sign {
+      background: #fff;
+      border: 4px solid var(--green);
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: var(--green);
+      font-family: 'Nunito', sans-serif;
+      box-shadow: 4px 4px 0 var(--yellow);
+    }
+
+    /* ====== ICON NAV ====== */
+    .icon-nav {
+      background: var(--gray-light);
+      padding: 20px 0;
+      border-bottom: 2px solid #e0e0e0;
+    }
+    .icon-nav-item {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 8px; cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .icon-nav-item:hover { transform: translateY(-4px); }
+    .icon-circle {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid #ccc;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; color: var(--green);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: all 0.2s;
+    }
+    .icon-nav-item:hover .icon-circle {
+      background: var(--green);
+      color: #fff;
+      border-color: var(--green);
+    }
+    .icon-circle.active-icon { background: var(--green); color: #fff; border-color: var(--green); }
+    .icon-label { font-size: 0.78rem; font-weight: 700; text-align: center; color: var(--dark); }
+
+    /* ====== SECTION TITLES ====== */
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--dark);
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid var(--green-light);
+    }
+    .section-title .dots { display: flex; gap: 5px; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-green { background: var(--green); }
+    .dot-yellow { background: var(--yellow); }
+    .dot-red { background: var(--red); }
+
+    /* ====== MA VILLE ====== */
+    .tabs-ville .nav-link {
+      color: var(--dark);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 8px 16px;
+      border-radius: 0;
+      border-bottom: 2px solid transparent;
+    }
+    .tabs-ville .nav-link.active {
+      color: var(--green);
+      border-bottom: 2px solid var(--green);
+      background: none;
+    }
+    .ville-info-box {
+      background: #e8f5e9;
+      border-radius: 8px;
+      padding: 20px;
+      border-left: 4px solid var(--green);
+    }
+    .ville-stat { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 0.9rem; }
+    .ville-stat i { color: var(--green); font-size: 1.1rem; min-width: 20px; }
+    .ville-stat strong { color: var(--dark); }
+
+    /* ====== ACTUALITES ====== */
+    .news-card {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .news-card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+    .news-card img { width: 100%; height: 160px; object-fit: cover; }
+    .news-date-badge {
+      position: absolute; bottom: 10px; left: 10px;
+      background: var(--yellow);
+      color: var(--dark);
+      font-size: 0.75rem; font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .news-body { padding: 12px; }
+    .news-body p { font-size: 0.82rem; color: #555; line-height: 1.5; margin: 0; }
+
+    /* ====== CALENDAR ====== */
+    .calendar-box {
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      overflow: hidden;
+    }
+    .calendar-header {
+      background: var(--dark);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-weight: 800;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 2px;
+    }
+    .calendar-grid { padding: 10px; }
+    .cal-day-header { font-size: 0.7rem; font-weight: 700; text-align: center; color: #666; padding: 4px; }
+    .cal-day { font-size: 0.8rem; text-align: center; padding: 5px 3px; cursor: pointer; border-radius: 4px; }
+    .cal-day:hover { background: var(--green-light); color: #fff; }
+    .cal-day.today { background: var(--yellow); font-weight: 700; border-radius: 4px; }
+    .cal-day.red { color: var(--red); font-weight: 700; }
+    .cal-day.other-month { color: #bbb; }
+
+    /* ====== NEWSLETTER ====== */
+    .newsletter-box {
+      background: #e8f5e9;
+      border-radius: 8px;
+      padding: 20px;
+      border: 1px solid #c8e6c9;
+    }
+    .newsletter-box h6 { color: var(--green); font-weight: 800; text-transform: uppercase; font-size: 0.9rem; }
+
+    /* ====== GESTION ====== */
+    .gestion-tabs .nav-link {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--dark);
+      padding: 6px 14px;
+      background: #f0f0f0;
+      border-radius: 20px;
+      margin: 3px;
+      border: none;
+    }
+    .gestion-tabs .nav-link.active { background: var(--green); color: #fff; }
+    .gestion-tabs .nav-link:hover { background: var(--green-light); color: #fff; }
+
+    .pav-box {
+      background: #e8f5e9;
+      border-radius: 8px;
+      padding: 20px;
+      border: 1px solid #c8e6c9;
+    }
+    .pav-box h5 { font-weight: 800; color: var(--dark); font-size: 1.05rem; }
+    .pav-box p { font-size: 0.85rem; color: #555; }
+    .btn-pav {
+      background: var(--yellow);
+      color: var(--dark);
+      font-weight: 700;
+      border: none;
+      border-radius: 20px;
+      padding: 8px 20px;
+      font-size: 0.85rem;
+    }
+    .btn-pav:hover { background: var(--yellow-dark); color: var(--dark); }
+
+    .stat-box {
+      border-radius: 8px;
+      padding: 16px 20px;
+      text-align: center;
+      color: #fff;
+    }
+    .stat-box .stat-num { font-size: 2rem; font-weight: 900; font-family: 'Nunito', sans-serif; }
+    .stat-box .stat-label { font-size: 0.78rem; font-weight: 600; }
+    .stat-blue { background: var(--blue); }
+    .stat-red { background: var(--red); }
+    .stat-green { background: var(--green); }
+
+    .signaler-box {
+      background: #fff3e0;
+      border-radius: 8px;
+      padding: 20px;
+      border: 1px solid #ffe0b2;
+    }
+    .btn-signaler {
+      background: var(--yellow);
+      color: var(--dark);
+      font-weight: 700;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 24px;
+    }
+    .btn-signaler:hover { background: var(--yellow-dark); }
+
+    /* ====== CHANGER DE VILLE ====== */
+    .changer-section {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Libreville_panoramic_view.jpg/1280px-Libreville_panoramic_view.jpg') center/cover no-repeat;
+      padding: 60px 0;
+      color: #fff;
+    }
+    .changer-section h2 { font-weight: 900; font-size: 2rem; }
+    .changer-select {
+      background: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 18px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--dark);
+      width: 100%;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 16px;
+    }
+    .btn-changer {
+      background: var(--yellow);
+      color: var(--dark);
+      font-weight: 800;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      padding: 12px 50px;
+      letter-spacing: 1px;
+    }
+    .btn-changer:hover { background: var(--yellow-dark); }
+
+    /* ====== FOOTER ====== */
+    footer { background: var(--dark); color: #aaa; padding: 30px 0; font-size: 0.85rem; }
+    footer a { color: #ccc; text-decoration: none; }
+    footer a:hover { color: var(--yellow); }
+
+    /* ====== MISC ====== */
+    .section-pad { padding: 40px 0; }
+    .rapport-link { color: var(--green); font-weight: 600; font-size: 0.85rem; text-decoration: none; }
+    .rapport-link:hover { text-decoration: underline; }
+    .tabs-filter .nav-link {
+      font-size: 0.83rem;
+      color: #555;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+    .tabs-filter .nav-link.active { background: var(--green); color: #fff; }
